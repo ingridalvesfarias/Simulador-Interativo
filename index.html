@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadow Combat - Turn Based RPG</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fonte impactante estilo quadrinhos/games -->
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="game-container">
+        <header class="game-header">
+            <h1>SHADOW // COMBAT</h1>
+            <p id="turn-indicator">SEU TURNO</p>
+        </header>
+
+        <!-- Arena de Batalha -->
+        <main class="battle-arena">
+            
+            <!-- Card do Jogador -->
+            <div class="character-card player-card" id="player-card">
+                <div class="comic-badge">HERÓI</div>
+                <div class="avatar-placeholder">⚡</div>
+                
+                <div class="status-group">
+                    <div class="status-label"><span>HP</span> <span id="player-hp-text">100/100</span></div>
+                    <div class="bar-container">
+                        <div class="status-bar hp-bar" id="player-hp-bar" style="width: 100%;"></div>
+                    </div>
+                </div>
+
+                <div class="status-group">
+                    <div class="status-label"><span>ENERGIA</span> <span id="player-energy-text">50/50</span></div>
+                    <div class="bar-container">
+                        <div class="status-bar energy-bar" id="player-energy-bar" style="width: 100%;"></div>
+                    </div>
+                </div>
+
+                <div class="shield-indicator">ESCUDO: <span id="player-shield">0</span></div>
+            </div>
+
+            <!-- VS Divider -->
+            <div class="vs-divider">VS</div>
+
+            <!-- Card do Vilão -->
+            <div class="character-card enemy-card" id="enemy-card">
+                <div class="comic-badge enemy">VILÃO</div>
+                <div class="avatar-placeholder enemy">💀</div>
+                
+                <div class="status-group">
+                    <div class="status-label"><span>HP</span> <span id="enemy-hp-text">100/100</span></div>
+                    <div class="bar-container">
+                        <div class="status-bar hp-bar" id="enemy-hp-bar" style="width: 100%;"></div>
+                    </div>
+                </div>
+
+                <div class="status-group">
+                    <div class="status-label"><span>ENERGIA</span> <span id="enemy-energy-text">50/50</span></div>
+                    <div class="bar-container">
+                        <div class="status-bar energy-bar" id="enemy-energy-bar" style="width: 100%;"></div>
+                    </div>
+                </div>
+
+                <div class="shield-indicator">ESCUDO: <span id="enemy-shield">0</span></div>
+            </div>
+
+        </main>
+
+        <!-- Painel de Controle e Histórico -->
+        <footer class="control-panel">
+            <div class="action-buttons">
+                <button class="btn btn-attack" onclick="handleAction('attack')">ATACAR</button>
+                <button class="btn btn-defend" onclick="handleAction('defend')">DEFENDER</button>
+                <button class="btn btn-heal" onclick="handleAction('heal')">RECUPERAR</button>
+            </div>
+            
+            <div class="combat-log">
+                <div class="log-box" id="log-box">
+                    <p class="system-msg">A batalha começou! Escolha sua ação...</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
